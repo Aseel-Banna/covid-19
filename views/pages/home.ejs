@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Covid-19 Web App</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/allCountries">All Countries</a>
+            <a href="/myRecords">My Records</a>
+        </nav>
+    </header>
+    <main>
+        <div class="card">        
+                <h2>Total Confirmed: <%= data.TotalConfirmed %> </h2>
+                <h2>Total Deaths: <%= data.TotalDeaths %> </h2>
+                <h2>Total Recovered: <%= data.TotalRecovered %> </h2>
+
+            </div>
+            <form action="/getCountryResult" method="GET" id="search-form">
+                <input type="text" name="country" placeholder="Country">
+                <input type="date" name="from">
+                <input type="date" name="to">
+                <input type="submit" value="Search">
+            </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="sub-card">
+        <h1>Country: <%= data.country %> </h1>
+        <h2>Total Confirmed: <%= data.totalconfirmed %> </h2>
+        <h2>Total Deaths: <%= data.totaldeaths %></h2>
+        <h2>Total Recovered: <%= data.totalrecovered %></h2>
+        <form action="/deleteRecord/<%= data.id %>?_method=delete" method="POST">
+            <input type="submit" value="DELETE" id="add-btn">
+        </form>
+    </div>
+    </main>
+</body>
+</html>

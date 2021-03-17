@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>My Records</h1>
+        <div class="card">
+            <% if (data.length === 0){ %>
+                <h1> NO AVAILABLE RECORDS</h1>
+            <% } else { data.forEach(item =>{ %>
+                <div class="sub-card">
+                    <h1>Country: <%= item.country %> </h1>
+                    <h3>Date: <%= item.date %> </h3>
+                    <form action="/recordDetails/<%= item.id %> " method="GET">
+                        <input type="hidden" name="country" value="<%= item.country %>">
+                        <input type="hidden" name="totalconfirmed" value="<%= item.totalconfirmed %>">
+                        <input type="hidden" name="totaldeaths" value="<%= item.totaldeaths %>">
+                        <input type="hidden" name="totalrecovered" value="<%= item.totalrecovered %>">
+                        <input type="hidden" name="date" value="<%= item.date %>">
+                        <input type="submit" value="View Details" id="add-btn">
+                    </form>
+                </div>
+            <% }) %> 
+        <% } %> 
+        </div>
+    </main>
+</body>
+</html>
